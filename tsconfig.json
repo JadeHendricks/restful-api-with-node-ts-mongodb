@@ -1,0 +1,14 @@
+{
+    //we are configuring typescript in this file
+    "compilerOptions": {
+        "module": "NodeNext",
+        "moduleResolution": "node",
+        "baseUrl": "src",
+        "outDir": "dist",
+        "sourceMap": true,
+        //allow ts to implement typechecking
+        "noImplicitAny": true,
+    },
+    //include all folders inside of src and all files inside those folders
+    "include": ["src/**/*"]
+}
