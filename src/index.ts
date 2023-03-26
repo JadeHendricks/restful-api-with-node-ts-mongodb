@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import compression from "compression";
 import cors from "cors";
 import mongoose from "mongoose";
+import router from "./router";
 const dotenv = require("dotenv").config();
 const port = process.env.PORT || 8080;
 
@@ -30,3 +31,5 @@ const dBConnectionString = process.env.MONGO_URL
 mongoose.Promise = Promise;
 mongoose.connect(dBConnectionString);
 mongoose.connection.on("error", (error: Error) => console.log(error));
+
+app.use("/", router())
