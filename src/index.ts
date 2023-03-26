@@ -6,6 +6,7 @@ import compression from "compression";
 import cors from "cors";
 import mongoose from "mongoose";
 const dotenv = require("dotenv").config();
+const port = process.env.PORT || 8080;
 
 //setting up our express server
 const app = express();
@@ -18,8 +19,8 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 
 const server = http.createServer(app);
-server.listen(8080, () => {
-    console.log('Server running on localhost:8080/');
+server.listen(port, () => {
+    console.log(`Server running on port: ${port}`);
 });
 
 const dBConnectionString = process.env.MONGO_URL
